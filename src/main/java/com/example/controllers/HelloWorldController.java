@@ -25,7 +25,7 @@ public class HelloWorldController {
 		this.environment = environment;
 	}
 
-	@RequestMapping(value="/helloworld")
+	@RequestMapping(value="/")
 	public HelloWorldJson helloWorld() {
 				
 		String port = environment.getProperty("local.server.port");
