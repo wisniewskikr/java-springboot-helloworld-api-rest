@@ -49,5 +49,5 @@ jobs:
         with:
           app-name: 'helloworld-as'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_0C0F7A35425F485390ED3940A070A96F }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_E13959C2C67E462BAFF29749DCA21890 }}
           package: '*.jar'
