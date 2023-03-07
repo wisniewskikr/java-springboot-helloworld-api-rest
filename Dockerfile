@@ -3,6 +3,7 @@ WORKDIR /opt/app
 COPY .mvn/ .mvn
 COPY mvnw pom.xml ./
 RUN dos2unix mvnw
+RUN chmod +x ./mvnw
 RUN ./mvnw dependency:go-offline
 COPY src src
 RUN ./mvnw clean package -Dmaven.test.skip
