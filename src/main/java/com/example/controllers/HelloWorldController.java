@@ -33,7 +33,7 @@ public class HelloWorldController {
 		
 		logger.info("Application was called with message: {}, port: {} and uuid: {}", message, port, uuid);
 		
-		return new HelloWorldJson(message, port, uuid);
+		return new HelloWorldJson(message + " UPDATED", port, uuid);
 		
 	}
 	
