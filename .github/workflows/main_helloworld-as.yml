@@ -23,14 +23,14 @@ jobs:
       uses: docker/login-action@v1
       with:
         registry: https://index.docker.io/v1/
-        username: ${{ secrets.AzureAppService_ContainerUsername_aaa36816e2264ff699de4d99042d5ddc }}
-        password: ${{ secrets.AzureAppService_ContainerPassword_24d4529656b34bde84916183b063032a }}
+        username: ${{ secrets.AzureAppService_ContainerUsername_22900cdae2d74b2490785ba2e19af35f }}
+        password: ${{ secrets.AzureAppService_ContainerPassword_e18f16035076488eb9537faa1c0dc415 }}
 
     - name: Build and push container image to registry
       uses: docker/build-push-action@v2
       with:
         push: true
-        tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_aaa36816e2264ff699de4d99042d5ddc }}/java-springboot-helloworld:${{ github.sha }}
+        tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_22900cdae2d74b2490785ba2e19af35f }}/java-springboot-helloworld:${{ github.sha }}
         file: ./Dockerfile
 
   deploy:
@@ -47,5 +47,5 @@ jobs:
       with:
         app-name: 'helloworld-as'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_92156421cf1a44409a6d4e9ac17f0323 }}
-        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_aaa36816e2264ff699de4d99042d5ddc }}/java-springboot-helloworld:${{ github.sha }}'
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_aca7dcbf104e455ca9b35d87c47bfbc2 }}
+        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_22900cdae2d74b2490785ba2e19af35f }}/java-springboot-helloworld:${{ github.sha }}'
