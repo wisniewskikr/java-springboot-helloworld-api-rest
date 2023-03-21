@@ -7,7 +7,7 @@ USAGE
 
 Usage steps:
 1. Start application with `mvn spring-boot:run`
-2. Visit `http://localhost:8080`
+2. Using browser visit `http://localhost:8080`
 3. Clean up environment with `ctrl + C`
 
 
@@ -65,5 +65,7 @@ PRECONDITIONS
 
 
 ##### Preconditions - Actions
+* (Optional) Verified **Java Spring Boot Source Code**: `https://github.com/wisniewskikr/java-springboot-helloworld`
+* (Optional) Verified **Docker Image**: `https://hub.docker.com/repository/docker/wisniewskikr/java-springboot-helloworld/general`
 * Download **Source Code** (using Git or in any other way) 
 * Open any **Command Line** tool (for instance "Windonw PowerShell" on Windows OS) on downloaded **project's main folder**
