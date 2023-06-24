@@ -1,14 +1,15 @@
-USAGE
------
+USAGE JAVA
+----------
 
-> Please be aware that following tools should be installed on your local PC: **Java**, **Maven** and **Git**. 
+> Please be aware that following tools should be installed on your local PC: **Java**, **Maven**, **Git** and **Postman**. 
 
-> Please **clone/download** project and then open **project's main folder** in your favorite **command line tool** and then **run commands below**. 
+> Please **clone/download** project, open **project's main folder** in your favorite **command line tool** and then **run commands below**. 
 
 Usage steps:
-1. Start application with `mvn spring-boot:run`
-2. Using browser visit `http://localhost:8080`
-3. Clean up environment with `ctrl + C`
+1. In a command line tool start application with `mvn spring-boot:run`
+2. In a Postman use GET method and visit `http://localhost:8080`
+3. Clean up environment 
+     * In a command line tool stop application with `ctrl + C`
 
 
 DESCRIPTION
@@ -23,6 +24,7 @@ Terminology explanation:
 * **Spring Boot**: framework for Java. It consists of: Spring + Application Server + Configuration
 * **Maven**: tool for build automation
 * **Git**: tool for distributed version control
+* **Postman**: tool for sending HTTP request with different methods. In other words it's HTTP Client. 
 * **Docker** (Optional): tool for developing, shipping, and running applications which are provided as Docker Images and run as Docker Containers
 * **Docker Compose** (Optional): tool for defining and sharing Docker multi-container applications
 * **Kubernetes** (Optional): it's Docker container orchestration platform for managing containerized services
@@ -54,10 +56,11 @@ PRECONDITIONS
 -------------
 
 ##### Preconditions - Tools
-* Installed **Operating System** (tested on Windows 10)
+* Installed **Operating System** (tested on Windows 11)
 * Installed **Java** (tested on version 17.0.5)
 * Installed **Maven** (tested on version 3.8.5)
 * Installed **Git** (tested on version 2.33.0.windows.2)
+* Installed **Postman** (tested on version 10.15)
 * (Optional) Installed **Docker** (tested on version 20.10.23)
 * (Optional) Installed **Docker Compose** (tested on version v2.15.1)
 * (Optional) Installed **Minikube** (tested on version v1.28.0)
@@ -65,7 +68,7 @@ PRECONDITIONS
 
 
 ##### Preconditions - Actions
-* (Optional) Verified **Java Spring Boot Source Code**: `https://github.com/wisniewskikr/java-springboot-helloworld`
-* (Optional) Verified **Java Spring Boot Docker Image**: `https://hub.docker.com/repository/docker/wisniewskikr/java-springboot-helloworld/general`
 * Download **Source Code** (using Git or in any other way) 
 * Open any **Command Line** tool (for instance "Windonw PowerShell" on Windows OS) on downloaded **project's main folder**
+* (Optional) Verify **Java Spring Boot Source Code**: `https://github.com/wisniewskikr/java-springboot-helloworld-api-rest`
+* (Optional) Verify **Java Spring Boot Docker Image**: `https://hub.docker.com/repository/docker/wisniewskikr/java-springboot-helloworld-api-rest/general`
