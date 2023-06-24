@@ -63,7 +63,7 @@ Usage steps:
      * In a command line tool check Hello World Service with `kubectl describe service helloworld-service`
 1. Clean up environment 
      * In a command line tool remove Kubernetes elements with `kubectl delete -f kubernetes.yaml`
-     * In a command line tool (in **administrator** mode) stop Minikube tool with `kubectl delete -f kubernetes.yaml`
+     * In a command line tool (in **administrator** mode) stop Minikube tool with `stop minikube`
 
 
 DESCRIPTION
