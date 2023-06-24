@@ -30,6 +30,22 @@ Usage steps:
      * In a command line tool stop and remove Docker image with `docker rmi java-springboot-helloworld-api-rest-image`
 
 
+USAGE DOCKER COMPOSE
+--------------------
+
+> Please be aware that following tools should be installed on your local PC: **Docker** and **Docker Compose**. Docker and Docker Compose tools have to be **up and running**. 
+
+> Please **clone/download** project, open **project's main folder** in your favorite **command line tool** and then **proceed with steps below**. 
+
+Usage steps:
+1. In a command line tool start application with `docker-compose up -d --build`
+1. In a browser visit `http://localhost:8080`
+1. (Optional) Check application logs
+     * In a command line tool display applicaction logs with `docker logs helloworld-container`
+1. Clean up environment 
+     * In a command line tool stop application with `docker-compose down`
+
+
 DESCRIPTION
 -----------
 
