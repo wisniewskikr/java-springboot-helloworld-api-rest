@@ -7,9 +7,28 @@ USAGE JAVA
 
 Usage steps:
 1. In a command line tool start application with `mvn spring-boot:run`
-2. In a browser visit `http://localhost:8080`
-3. Clean up environment 
+1. In a browser visit `http://localhost:8080`
+1. Clean up environment 
      * In a command line tool stop application with `ctrl + C`
+
+
+USAGE DOCKER
+------------
+
+> Please be aware that following tools should be installed on your local PC: **Java**, **Maven**, **Git** and **Docker**. Docker tool has to be **up and running**. 
+
+> Please **clone/download** project, open **project's main folder** in your favorite **command line tool** and then **proceed with steps below**. 
+
+Usage steps:
+1. In a command line tool build Docker image with `docker build -t java-springboot-helloworld-api-rest-image .`
+1. In a command line tool start Docker container with `docker run -d -p 8080:8080 --name java-springboot-helloworld-api-rest-container java-springboot-helloworld-api-rest-image`
+1. In a browser visit `http://localhost:8080`
+1. (Optional) Check application logs
+     * In a command line tool display applicaction logs with `docker logs java-springboot-helloworld-api-rest-container`
+     * In a command line tool stop displaying application logs with `ctrl + C`
+1. Clean up environment 
+     * In a command line tool stop and remove Docker container with `docker rm -f springboot-helloworld-port-uuid-docker-single-container`
+     * In a command line tool stop and remove Docker image with `docker rmi springboot-helloworld-port-uuid-docker-single-image`
 
 
 DESCRIPTION
