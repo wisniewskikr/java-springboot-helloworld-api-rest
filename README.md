@@ -25,10 +25,9 @@ Usage steps:
 1. In a browser visit `http://localhost:8080`
 1. (Optional) Check application logs
      * In a command line tool display applicaction logs with `docker logs java-springboot-helloworld-api-rest-container`
-     * In a command line tool stop displaying application logs with `ctrl + C`
 1. Clean up environment 
-     * In a command line tool stop and remove Docker container with `docker rm -f springboot-helloworld-port-uuid-docker-single-container`
-     * In a command line tool stop and remove Docker image with `docker rmi springboot-helloworld-port-uuid-docker-single-image`
+     * In a command line tool stop and remove Docker container with `docker rm -f java-springboot-helloworld-api-rest-container`
+     * In a command line tool stop and remove Docker image with `docker rmi java-springboot-helloworld-api-rest-image`
 
 
 DESCRIPTION
