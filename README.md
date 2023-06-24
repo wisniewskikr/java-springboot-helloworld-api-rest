@@ -15,7 +15,7 @@ Usage steps:
 USAGE DOCKER
 ------------
 
-> Please be aware that following tools should be installed on your local PC: **Java**, **Maven**, **Git** and **Docker**. Docker tool has to be **up and running**. 
+> Please be aware that following tools should be installed on your local PC: **Docker**. Docker tool has to be **up and running**. 
 
 > Please **clone/download** project, open **project's main folder** in your favorite **command line tool** and then **proceed with steps below**. 
 
