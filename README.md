@@ -46,6 +46,26 @@ Usage steps:
      * In a command line tool stop application with `docker-compose down`
 
 
+USAGE KUBERNETES MINIKUBE
+-------------------------
+
+> Please be aware that following tools should be installed on your local PC: **Minikube** and **kubectl**. 
+
+> Please **clone/download** project, open **project's main folder** in your favorite **command line tool** and then **proceed with steps below**. 
+
+Usage steps:
+1. In a command line tool (in **administrator** mode) start Minikube tool with `minikube start`
+1. In a command line tool create Kubernetes elements with `kubectl apply -f kubernetes.yaml`
+1. In a command line tool open service in browser with `minikube service helloworld-service`
+1. (Optional) Check Kubernetes elements
+     * In a command line tool check Hello World Pod with `kubectl describe pod helloworld-pod`
+     * In a command line tool check Hello World Deployment with `kubectl describe deployment helloworld-deployment`
+     * In a command line tool check Hello World Service with `kubectl describe service helloworld-service`
+1. Clean up environment 
+     * In a command line tool remove Kubernetes elements with `kubectl delete -f kubernetes.yaml`
+     * In a command line tool (in **administrator** mode) stop Minikube tool with `kubectl delete -f kubernetes.yaml`
+
+
 DESCRIPTION
 -----------
 

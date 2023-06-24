@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: helloworld-container
-        image: wisniewskikr/java-springboot-helloworld
+        image: wisniewskikr/java-springboot-helloworld-api-rest
         ports:
         - containerPort: 8080
         readinessProbe:
