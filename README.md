@@ -1,13 +1,13 @@
 USAGE JAVA
 ----------
 
-> Please be aware that following tools should be installed on your local PC: **Java**, **Maven**, **Git** and **Postman**. 
+> Please be aware that following tools should be installed on your local PC: **Java**, **Maven** and **Git**. 
 
 > Please **clone/download** project, open **project's main folder** in your favorite **command line tool** and then **run commands below**. 
 
 Usage steps:
 1. In a command line tool start application with `mvn spring-boot:run`
-2. In a Postman use GET method and visit `http://localhost:8080`
+2. In a browser visit `http://localhost:8080`
 3. Clean up environment 
      * In a command line tool stop application with `ctrl + C`
 
@@ -24,7 +24,6 @@ Terminology explanation:
 * **Spring Boot**: framework for Java. It consists of: Spring + Application Server + Configuration
 * **Maven**: tool for build automation
 * **Git**: tool for distributed version control
-* **Postman**: tool for sending HTTP request with different methods. In other words it's HTTP Client. 
 * **Docker** (Optional): tool for developing, shipping, and running applications which are provided as Docker Images and run as Docker Containers
 * **Docker Compose** (Optional): tool for defining and sharing Docker multi-container applications
 * **Kubernetes** (Optional): it's Docker container orchestration platform for managing containerized services
@@ -60,7 +59,6 @@ PRECONDITIONS
 * Installed **Java** (tested on version 17.0.5)
 * Installed **Maven** (tested on version 3.8.5)
 * Installed **Git** (tested on version 2.33.0.windows.2)
-* Installed **Postman** (tested on version 10.15)
 * (Optional) Installed **Docker** (tested on version 20.10.23)
 * (Optional) Installed **Docker Compose** (tested on version v2.15.1)
 * (Optional) Installed **Minikube** (tested on version v1.28.0)
