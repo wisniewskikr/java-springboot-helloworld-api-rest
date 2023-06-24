@@ -16,12 +16,13 @@ DESCRIPTION
 -----------
 
 ##### Goal
-The goal of this project is to present how to create an application in **Java** programming language with usage **Spring Boot** framework.
+The goal of this project is to present how to create an application type **API REST** in **Java** programming language with usage **Spring Boot** framework.
 
 ##### Terminology
 Terminology explanation:
 * **Java**: object-oriented programming language
-* **Spring Boot**: framework for Java. It consists of: Spring + Application Server + Configuration
+* **API REST**: an architectural style for an application program interface (API) that uses HTTP requests to access and use data
+* **Spring Boot**: framework for Java. It consists of: Spring + Container + Configuration
 * **Maven**: tool for build automation
 * **Git**: tool for distributed version control
 * **Docker** (Optional): tool for developing, shipping, and running applications which are provided as Docker Images and run as Docker Containers
