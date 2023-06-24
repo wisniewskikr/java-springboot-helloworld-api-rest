@@ -3,7 +3,7 @@ USAGE JAVA
 
 > Please be aware that following tools should be installed on your local PC: **Java**, **Maven** and **Git**. 
 
-> Please **clone/download** project, open **project's main folder** in your favorite **command line tool** and then **run commands below**. 
+> Please **clone/download** project, open **project's main folder** in your favorite **command line tool** and then **proceed with steps below**. 
 
 Usage steps:
 1. In a command line tool start application with `mvn spring-boot:run`
