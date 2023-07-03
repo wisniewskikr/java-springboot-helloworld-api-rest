@@ -39,9 +39,26 @@ public class HelloWorldController {
 		return ResponseEntity.ok("Queue was produced successfuly.");
 		
 	}
+
+	@GetMapping("/queue/consume")
+	public ResponseEntity<String> queueConsumeConsumer() {				
+		
+		jmsTemplate.setReceiveTimeout(JmsTemplate.RECEIVE_TIMEOUT_NO_WAIT);		
+		String message = (String)jmsTemplate.receiveAndConvert(queue);
+
+   		String response = null;
+		if (message == null) {
+			response = "Queue wasn't consumed successfuly by Consumer. Message is empty";
+		} else {
+			response = "Queue was consumed successfuly by Consumer. Message: " + message;
+		}		
+
+		return ResponseEntity.ok(response);
+		
+	}
 	
 	@JmsListener(destination = "${jms.queue.name}")
-    public void queueListener(String message) {
+    public void queueConsumeListener(String message) {
         logger.info("Queue was consumed successfuly by Listener. Message: " + message);
     }
 	
