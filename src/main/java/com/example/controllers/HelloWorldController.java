@@ -1,41 +1,42 @@
 package com.example.controllers;
 
+import javax.jms.Queue;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.core.env.Environment;
 import org.springframework.http.ResponseEntity;
+import org.springframework.jms.core.JmsTemplate;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.example.dtos.HelloWorldDto;
 
 @RestController
 public class HelloWorldController {
 	
 	Logger logger = LoggerFactory.getLogger(HelloWorldController.class);
 	
-	private Environment environment;
+	@Autowired
+    private JmsTemplate jmsTemplate;
+
+    @Autowired
+    private Queue queue;
 	
 	@Value("${service.helloworld.message}")
 	private String message;
 	
 	@Autowired
-	public HelloWorldController(Environment environment) {
-		this.environment = environment;
+	public HelloWorldController(JmsTemplate jmsTemplate, Queue queue) {
+		this.jmsTemplate = jmsTemplate;
+		this.queue = queue;
 	}
 
-	@GetMapping("/")
-	public ResponseEntity<HelloWorldDto> helloWorld() {
+	@GetMapping("/queue/produce")
+	public ResponseEntity<String> queueProduce() {
 				
-		String port = environment.getProperty("local.server.port");
-		String uuid = System.getProperty("uuid");
+		jmsTemplate.convertAndSend(queue, message);
+		return ResponseEntity.ok("Queue was produced successfuly.");
 		
-		logger.info("Application was called with message: {}, port: {} and uuid: {}", message, port, uuid);
-		
-		return ResponseEntity.ok(new HelloWorldDto(message, port, uuid));
-		
-	}
+	}	
 	
 }
