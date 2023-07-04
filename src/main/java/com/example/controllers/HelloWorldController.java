@@ -1,6 +1,7 @@
 package com.example.controllers;
 
 import javax.jms.Queue;
+import javax.jms.Topic;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,20 +18,55 @@ public class HelloWorldController {
 	
 	Logger logger = LoggerFactory.getLogger(HelloWorldController.class);
 	
-	@Autowired
     private JmsTemplate jmsTemplate;
 
-    @Autowired
     private Queue queue;
+
+	private Topic topic;
 	
 	@Value("${service.helloworld.message}")
 	private String message;
 	
 	@Autowired
-	public HelloWorldController(JmsTemplate jmsTemplate, Queue queue) {
+	public HelloWorldController(JmsTemplate jmsTemplate, Queue queue, Topic topic) {
 		this.jmsTemplate = jmsTemplate;
 		this.queue = queue;
+		this.topic = topic;
 	}
+
+	// ***** TOPIC ***** //
+
+	@GetMapping("/topic/publish")
+	public ResponseEntity<String> topicPublish() {
+				
+		jmsTemplate.convertAndSend(topic, message);
+		return ResponseEntity.ok("Topic was pulblished successfuly.");
+		
+	}	
+
+	@GetMapping("/topic/subscribe")
+	public ResponseEntity<String> topicSubscribeSubscriber() {				
+		
+		jmsTemplate.setReceiveTimeout(JmsTemplate.RECEIVE_TIMEOUT_NO_WAIT);		
+		String message = (String)jmsTemplate.receiveAndConvert(topic);
+
+   		String response = null;
+		if (message == null) {
+			response = "Topic wasn't subscribed successfuly by Subscriber. Message is empty";
+		} else {
+			response = "Topic was subscribed successfuly by Subscriber. Message: " + message;
+		}		
+
+		return ResponseEntity.ok(response);
+		
+	}
+	
+	@JmsListener(destination = "${jms.topic.name}")
+    public void topicSubscribeListener(String message) {
+        logger.info("Topic was subscribed successfuly by Listener. Message: " + message);
+    }
+
+	// ***** QUEUE ***** //
 
 	@GetMapping("/queue/produce")
 	public ResponseEntity<String> queueProduce() {
@@ -38,7 +74,7 @@ public class HelloWorldController {
 		jmsTemplate.convertAndSend(queue, message);
 		return ResponseEntity.ok("Queue was produced successfuly.");
 		
-	}
+	}	
 
 	@GetMapping("/queue/consume")
 	public ResponseEntity<String> queueConsumeConsumer() {				
